@@ -25,6 +25,7 @@ exports.config = {
     googleResultsPage: './pages/googleResults.js',
     idnesHomePage: './pages/idnesHome.js',
     idnesBrnoPage: './pages/idnesBrno.js',
+    introPage: './pages/intro.js',
   },
   bootstrap: null,
   mocha: {},

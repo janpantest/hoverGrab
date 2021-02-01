@@ -20,7 +20,8 @@ module.exports = {
 
   clickLinkBrno() {
     I.seeInTitle('iDNES.cz')
-
+    
+    I.waitForElement(this.locators.kraje);
     I.moveCursorTo(this.locators.kraje);
     I.waitForClickable(this.locators.krajeBrno);
     I.click(this.locators.krajeBrno);
