@@ -25,17 +25,17 @@ Feature('vm');
 
 // });
 
-// Scenario('seznam', async ({ I, seznamHomePage, seznamResultsPage, valmezHomePage, valmezVedeniMestaPage, valmezVedeniMestaDetailPage }) => {
-//     seznamHomePage.checkPage('https://seznam.cz');
-//     seznamHomePage.checkTitle('Seznam');
-//     seznamHomePage.enterString('valmez');
-//     seznamResultsPage.grabb();
-//     seznamResultsPage.clickLink();
-//     valmezHomePage.clickVedeniMesta();
-//     valmezVedeniMestaPage.clickVedeniMesta();
-//     valmezVedeniMestaDetailPage.grabJmena();
+Scenario('seznam', async ({ I, introPage, seznamHomePage, seznamResultsPage, valmezHomePage, valmezVedeniMestaPage, valmezVedeniMestaDetailPage }) => {
+    introPage.checkPage('https://seznam.cz');
+    seznamHomePage.checkTitle('Seznam');
+    seznamHomePage.enterString('valmez');
+    seznamResultsPage.grabb();
+    seznamResultsPage.clickLink();
+    valmezHomePage.clickVedeniMesta();
+    valmezVedeniMestaPage.clickVedeniMesta();
+    valmezVedeniMestaDetailPage.grabJmena();
 
-// });
+});
 
 
 // Scenario('GOOGLE idnes - kraje', ({ I, googleResultsPage, googleInputPage, idnesHomePage, idnesBrnoPage }) => {
@@ -64,7 +64,7 @@ Scenario('google', ({ I, googleInputPage, googleResultsPage, idnesHomePage, idne
 
 
 Scenario('google - updated', ({ I, introPage, googleInputPage, googleResultsPage, idnesHomePage, idnesBrnoPage }) => {
-    introPage.checkPage('https://google.com')
+    introPage.checkPage('https://google.cz')
     googleInputPage.acceptCookies();
     googleInputPage.enterString('idnes')
     googleResultsPage.clickLinkIdnes();
