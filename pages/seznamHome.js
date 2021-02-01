@@ -13,8 +13,22 @@ module.exports = {
     I.amOnPage('https://www.seznam.cz/');
     I.seeInTitle('Seznam');
     I.waitForElement(this.locators.searchField);
-    I.fillField(this.locators.searchField, string)
-    I.click(this.locators.submitButton)
+    I.fillField(this.locators.searchField, string);
+    I.click(this.locators.submitButton);
 
+  },
+
+  checkPage(string) {
+    I.amOnPage(string);
+  },
+
+  checkTitle(string) {
+    I.seeInTitle(string);
+  },
+
+  enterString(string) {
+    I.waitForElement(this.locators.searchField);
+    I.fillField(this.locators.searchField, string);
+    I.click(this.locators.submitButton);
   }
 }

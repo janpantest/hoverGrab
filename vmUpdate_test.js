@@ -25,6 +25,18 @@ Scenario('google', ({ I, googleInputPage, googleResultsPage, valmezHomePage, val
 
 // });
 
+Scenario('seznam', async ({ I, seznamHomePage, seznamResultsPage, valmezHomePage, valmezVedeniMestaPage, valmezVedeniMestaDetailPage }) => {
+    seznamHomePage.checkPage('https://seznam.cz');
+    seznamHomePage.checkTitle('Seznam');
+    seznamHomePage.enterString('valmez');
+    seznamResultsPage.grabb();
+    seznamResultsPage.clickLink();
+    valmezHomePage.clickVedeniMesta();
+    valmezVedeniMestaPage.clickVedeniMesta();
+    valmezVedeniMestaDetailPage.grabJmena();
+
+});
+
 
 // Scenario('GOOGLE idnes - kraje', ({ I, googleResultsPage, googleInputPage, idnesHomePage, idnesBrnoPage }) => {
 //     googleInputPage.acceptAgreement();
