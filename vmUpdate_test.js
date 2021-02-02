@@ -25,17 +25,17 @@ Feature('vm');
 
 // });
 
-Scenario('seznam', async ({ I, introPage, seznamHomePage, seznamResultsPage, valmezHomePage, valmezVedeniMestaPage, valmezVedeniMestaDetailPage }) => {
-    introPage.checkPage('https://seznam.cz');
-    seznamHomePage.checkTitle('Seznam');
-    seznamHomePage.enterString('valmez');
-    seznamResultsPage.grabb();
-    seznamResultsPage.clickLink();
-    valmezHomePage.clickVedeniMesta();
-    valmezVedeniMestaPage.clickVedeniMesta();
-    valmezVedeniMestaDetailPage.grabJmena();
+// Scenario('seznam', async ({ I, introPage, seznamHomePage, seznamResultsPage, valmezHomePage, valmezVedeniMestaPage, valmezVedeniMestaDetailPage }) => {
+//     introPage.checkPage('https://seznam.cz');
+//     seznamHomePage.checkTitle('Seznam');
+//     seznamHomePage.enterString('valmez');
+//     seznamResultsPage.grabb();
+//     seznamResultsPage.clickLink();
+//     valmezHomePage.clickVedeniMesta();
+//     valmezVedeniMestaPage.clickVedeniMesta();
+//     valmezVedeniMestaDetailPage.grabJmena();
 
-});
+// });
 
 
 // Scenario('GOOGLE idnes - kraje', ({ I, googleResultsPage, googleInputPage, idnesHomePage, idnesBrnoPage }) => {
@@ -51,10 +51,16 @@ Scenario('seznam', async ({ I, introPage, seznamHomePage, seznamResultsPage, val
 
 // });
 
-Scenario('google', ({ I, googleInputPage, googleResultsPage, idnesHomePage, idnesBrnoPage }) => {
+Scenario('google/grabb', async ({ I, googleInputPage, googleResultsPage, idnesHomePage, idnesBrnoPage }) => {
+    var assert = require('assert');
+
     googleInputPage.checkPage('https://google.com')
     googleInputPage.acceptCookies();
-    googleInputPage.enterString('idnes')
+    
+    googleInputPage.enterString('idnes');
+    assert.strictEqual(await googleResultsPage.grabbing(), 'adresy');
+    
+    googleResultsPage.grabbing();
     googleResultsPage.clickLinkIdnes();
     // idnesHomePage.clickAcceptCookies();
     idnesHomePage.clickLinkBrno();
