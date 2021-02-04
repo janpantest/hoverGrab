@@ -23,7 +23,7 @@ module.exports = {
     
     I.waitForElement(this.locators.kraje, 20);
     I.moveCursorTo(this.locators.kraje);
-    I.waitForClickable(this.locators.krajeBrno);
+    I.waitForClickable(this.locators.krajeBrno, 10);
     I.click(this.locators.krajeBrno);
     I.seeInTitle('Brno')
   }
