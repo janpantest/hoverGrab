@@ -39,7 +39,7 @@ module.exports = {
 
     console.log(`tohle je cely string ${slovo}`);
     slovo = slovo.split(' ');
-    console.log(`Kdo ma dneska svatek?? >>>  ${slovo[2]}  <<<`)
+    console.log(`Kdo ma dneska svatek?? \n >>>  ${slovo[2]}  !!!!!! <<<`)
     slovo = slovo[1];
     console.log(`hledany string je:  ${slovo}`);
     // assert.equal(slovo, 'má');
