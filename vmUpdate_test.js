@@ -51,31 +51,40 @@ Feature('vm');
 
 // });
 
-Scenario('google/grabb', async ({ I, googleInputPage, googleResultsPage, idnesHomePage, idnesBrnoPage }) => {
+// Scenario('google/grabb', async ({ I, googleInputPage, googleResultsPage, idnesHomePage, idnesBrnoPage }) => {
+//     var assert = require('assert');
+
+//     googleInputPage.checkPage('https://google.com')
+//     googleInputPage.acceptCookies();
+    
+//     googleInputPage.enterString('idnes');
+//     assert.strictEqual(await googleResultsPage.grabbing(), 'adresy');
+    
+//     googleResultsPage.grabbing();
+//     googleResultsPage.clickLinkIdnes();
+//     // idnesHomePage.clickAcceptCookies();
+//     idnesHomePage.clickLinkBrno();
+//     idnesBrnoPage.clickZlin();
+
+// });
+
+
+// Scenario('google - updated', ({ I, introPage, googleInputPage, googleResultsPage, idnesHomePage, idnesBrnoPage }) => {
+//     introPage.checkPage('https://google.cz')
+//     googleInputPage.acceptCookies();
+//     googleInputPage.enterString('idnes')
+//     googleResultsPage.clickLinkIdnes();
+//     // idnesHomePage.clickAcceptCookies();
+//     idnesHomePage.clickLinkBrno();
+//     idnesBrnoPage.clickZlin();
+
+// });
+
+
+Scenario('Seznam assert grab', async ({I, seznamHomePage}) => {
     var assert = require('assert');
-
-    googleInputPage.checkPage('https://google.com')
-    googleInputPage.acceptCookies();
-    
-    googleInputPage.enterString('idnes');
-    assert.strictEqual(await googleResultsPage.grabbing(), 'adresy');
-    
-    googleResultsPage.grabbing();
-    googleResultsPage.clickLinkIdnes();
-    // idnesHomePage.clickAcceptCookies();
-    idnesHomePage.clickLinkBrno();
-    idnesBrnoPage.clickZlin();
-
-});
-
-
-Scenario('google - updated', ({ I, introPage, googleInputPage, googleResultsPage, idnesHomePage, idnesBrnoPage }) => {
-    introPage.checkPage('https://google.cz')
-    googleInputPage.acceptCookies();
-    googleInputPage.enterString('idnes')
-    googleResultsPage.clickLinkIdnes();
-    // idnesHomePage.clickAcceptCookies();
-    idnesHomePage.clickLinkBrno();
-    idnesBrnoPage.clickZlin();
-
-});
+    seznamHomePage.checkPage('https://seznam.cz');
+    // assert.equal(await seznamHomePage.grabbingSvatek(), 'má');
+    assert.strictEqual(await seznamHomePage.grabovaniTest(), 'má');
+    // seznamHomePage.grabbing();
+})
