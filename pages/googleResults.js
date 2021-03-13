@@ -5,7 +5,7 @@ module.exports = {
   // insert your locators and methods here
   locators: {
     linkVM: "//div/div/cite[contains(text(), 'www.valasskemezirici.cz')]",
-    linkIdnes: "//h3/span[contains(text(), 'iDNES.cz – s námi víte víc')]",
+    linkIdnes: "//h3[contains(text(), 'iDNES.cz – s námi víte víc')]",
     footer: "//div[@style='visibility: visible;']",
   },
 
