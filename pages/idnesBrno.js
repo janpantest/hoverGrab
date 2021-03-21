@@ -15,9 +15,11 @@ module.exports = {
     I.seeInTitle('Brno');
     // I.waitForElement(this.locators.krajSelektorBrno)
     // I.seeElement(this.locators.krajSelektorBrno);
-    I.moveCursorTo(this.locators.kraje);
+    I.moveCursorTo(this.locators.kraje, 3);
     I.waitForClickable(this.locators.krajeZlin);
-    I.click(thiq.locators.krajeZlin);
-    I.seeElement(this.locators.krajSelektorZlin)
+    I.click(this.locators.krajeZlin);
+    I.seeElement(this.locators.krajSelektorZlin);
+    // I.seeInTitle('Zlín')
+
   }
 }

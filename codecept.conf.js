@@ -26,6 +26,7 @@ exports.config = {
     idnesHomePage: './pages/idnesHome.js',
     idnesBrnoPage: './pages/idnesBrno.js',
     introPage: './pages/intro.js',
+    idnesZlinPage: './pages/idnesZlin.js'
   },
   bootstrap: null,
   mocha: {},
