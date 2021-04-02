@@ -1,9 +1,10 @@
 Feature('vm');
 
 Scenario('google', ({ I, googleInputPage, googleResultsPage, valmezHomePage, valmezVedeniMestaPage, valmezVedeniMestaDetailPage }) => {
-    googleInputPage.acceptAgreement();
+    // googleInputPage.acceptAgreement();
 
-    I.switchToPreviousTab(0)
+    // I.switchToPreviousTab(0)
+    googleInputPage.acceptPopUp('https://google.com');
     googleInputPage.enterString('valmez')
     googleResultsPage.clickLink();
     valmezHomePage.clickVedeniMesta()
@@ -52,8 +53,10 @@ Scenario('google', ({ I, googleInputPage, googleResultsPage, valmezHomePage, val
 Scenario('google/grabb', async ({ I, googleInputPage, googleResultsPage, idnesHomePage, idnesBrnoPage, idnesZlinPage }) => {
     var assert = require('assert');
 
-    googleInputPage.checkPage('https://google.com')
-    googleInputPage.acceptCookies();
+    // googleInputPage.checkPage('https://google.com')
+    // googleInputPage.acceptCookies();
+    googleInputPage.acceptPopUp('https://google.com');
+
     
     googleInputPage.enterString('idnes');
     assert.strictEqual(await googleResultsPage.grabbing(), 'adresy');
@@ -69,8 +72,9 @@ Scenario('google/grabb', async ({ I, googleInputPage, googleResultsPage, idnesHo
 
 
 Scenario('google - updated', ({ I, introPage, googleInputPage, googleResultsPage, idnesHomePage, idnesBrnoPage }) => {
-    introPage.checkPage('https://google.cz')
-    googleInputPage.acceptCookies();
+    // introPage.checkPage('https://google.cz')
+    // googleInputPage.acceptCookies();
+    googleInputPage.acceptPopUp('https://google.com');
     googleInputPage.enterString('idnes')
     googleResultsPage.clickLinkIdnes();
     // idnesHomePage.clickAcceptCookies();

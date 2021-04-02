@@ -8,6 +8,7 @@ module.exports = {
     searchField: "//input[@name='q']",
     agreeLabel: "//iframe[contains(@src, 'consent.google.com')",
     searchOption: "(//div[@class='sbl1'])[1]",
+    acceptButton: "//div[contains(text(), 'Souhlasím')]"
   },
 
   acceptAgreement() {
@@ -21,6 +22,12 @@ module.exports = {
     // }
 
   },
+
+  acceptPopUp(url) {
+    I.amOnPage(url);
+    I.click(this.locators.acceptButton);
+  },
+  
 
   acceptCookies() {
     
